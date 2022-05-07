@@ -11,6 +11,7 @@
     "build:mjs": "cross-env NODE_ENV=production webpack -c webpack.config_mjs.js",
     "build:umd": "cross-env NODE_ENV=production webpack -c webpack.config_umd.js",
     "build:cjs": "cross-env NODE_ENV=production webpack -c webpack.config_cjs.js",
+    "rbuild": "cross-env NODE_ENV=production rollup -c",
     "install-peers": "npm-install-peers"
   },
   "keywords": [

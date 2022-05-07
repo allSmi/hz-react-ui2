@@ -4,12 +4,14 @@
   "description": "react ui",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
+  "module": "dist/rollup-es/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production babel lib --out-dir lib --extensions \".tsx,.js\"",
     "build:mjs": "cross-env NODE_ENV=production webpack -c webpack.config_mjs.js",
     "build:umd": "cross-env NODE_ENV=production webpack -c webpack.config_umd.js",
-    "build:cjs": "cross-env NODE_ENV=production webpack -c webpack.config_cjs.js"
+    "build:cjs": "cross-env NODE_ENV=production webpack -c webpack.config_cjs.js",
+    "install-peers": "npm-install-peers"
   },
   "keywords": [
     "react",
@@ -19,8 +21,6 @@
   "email": "739998710@qq.com",
   "license": "ISC",
   "dependencies": {
-    "@types/lodash.debounce": "^4.0.6",
-    "@types/lodash.throttle": "^4.1.6",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1"
   },
@@ -32,11 +32,12 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@babel/runtime-corejs3": "^7.17.9",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.45",
     "@types/react-dom": "^16.9.8",
@@ -46,9 +47,8 @@
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
+    "npm-install-peers": "^1.2.2",
     "postcss-loader": "^6.2.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
     "rollup": "^2.72.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -64,8 +64,9 @@
     "webpack-cli": "^4.9.2"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "@babel/runtime-corejs3": "^7.17.9"
   },
   "browserslist": {
     "production": [

@@ -1,6 +1,7 @@
 import babel from '@rollup/plugin-babel'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+// import {terser} from "rollup-plugin-terser";
 // import ts from '@rollup/plugin-typescript'
 import ts from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
@@ -48,6 +49,7 @@ module.exports = {
       extract: true, // 把css提取为单独文件
     }),
     img(),
+    // terser(),
     babel({
       // babelrc: false,
       babelHelpers : 'runtime',

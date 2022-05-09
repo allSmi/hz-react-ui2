@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths":{
-      "src/*": ["src/*"],
-      "@/*": ["src/*"]
+      "src/*": ["../src/*"],
+      "@/*": ["../src/*"]
     },
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -23,12 +23,15 @@
     "isolatedModules": true,
     "jsx": "react",
     "experimentalDecorators": true,
-    "noEmit": true,
+    // "noEmit": true,
+    "declaration": true,
+    "declarationDir": "../types",
+    "outDir": "../ts-temp"
   },
   "include": [
-    "src",
-    "main.ts",
-    "main.d.ts"
+    "../src",
+    "../main.ts",
+    "../main.d.ts"
   ],
   "exclude": [
     "node_modules"

@@ -6,6 +6,7 @@ import {terser} from "rollup-plugin-terser";
 import ts from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
 import img from 'rollup-plugin-img'
+import dts from "rollup-plugin-dts";
 
 const path = require('path')
 
@@ -78,6 +79,19 @@ export default [
     // terser()
   ],
   external: [
+    'react',
+    'react-dom',
+  ]
+},
+{
+  input: "./src/main.d.ts",
+  output: [{ file: "dist/my-library.d.ts", format: "es" }],
+  plugins: [
+    ...plugins,
+    dts()
+  ],
+  external: [
+    /@babel\/runtime/,
     'react',
     'react-dom',
   ]

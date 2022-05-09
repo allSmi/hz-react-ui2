@@ -26,6 +26,8 @@
     "experimentalDecorators": true
   },
   "include": [
-    "src"
+    "src",
+    "main.ts",
+    "main.d.ts"
   ],
 }

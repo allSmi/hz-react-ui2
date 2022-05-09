@@ -1,17 +1,19 @@
 {
-  "name": "hz-react-ui",
+  "name": "hz-react-ui2",
   "version": "1.0.10",
   "description": "react ui",
-  "main": "lib/main.js",
-  "types": "lib/main.d.ts",
-  "module": "dist/rollup-es/bundle.js",
+  "main": "./dist/rollup-umd/bundle.js",
+  "types": "./main.d.ts",
+  "module": "./dist/rollup-es-modules/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=production babel lib --out-dir lib --extensions \".tsx,.js\"",
+    "build:lib": "cross-env NODE_ENV=production babel lib --out-dir lib --extensions \".tsx,.js\"",
     "build:mjs": "cross-env NODE_ENV=production webpack -c webpack.config_mjs.js",
     "build:umd": "cross-env NODE_ENV=production webpack -c webpack.config_umd.js",
     "build:cjs": "cross-env NODE_ENV=production webpack -c webpack.config_cjs.js",
     "rbuild": "cross-env NODE_ENV=production rollup -c",
+    "wbuild": "npm run build:mjs && npm run build:umd && npm run build:cjs",
+    "build": "npm run rbuild && npm run wbuild",
     "install-peers": "npm-install-peers"
   },
   "keywords": [

@@ -10,7 +10,7 @@ import dts from "rollup-plugin-dts";
 
 const path = require('path')
 
-const input = ['./src/main.js']
+const input = ['./main.ts']
 const plugins = [
   nodeResolve(),
   commonjs(),
@@ -84,7 +84,7 @@ export default [
   ]
 },
 {
-  input: "./src/main.d.ts",
+  input: "./main.d.ts",
   output: [{ file: "dist/my-library.d.ts", format: "es" }],
   plugins: [
     ...plugins,

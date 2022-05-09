@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/main.js',
+  entry: './main.ts',
   output: {
     path: path.resolve(__dirname, 'dist/cjs'),
     filename: 'hz-react-ui.js',

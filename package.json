@@ -5,6 +5,11 @@
   "main": "./dist/rollup-umd/bundle.js",
   "types": "./types/main.d.ts",
   "module": "./dist/rollup-es-modules/main.js",
+  "files": [
+    "readme.md",
+    "dist/",
+    "types/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:lib": "cross-env NODE_ENV=production babel lib --out-dir lib --extensions \".tsx,.js\"",

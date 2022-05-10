@@ -10,13 +10,14 @@ import img from 'rollup-plugin-img'
 
 const path = require('path')
 
-const input = ['./main.ts']
+const input = './main.ts'
 const plugins = [
   nodeResolve(),
   commonjs(),
   ts(),
   postcss({
     extract: true, // 把css提取为单独文件
+    // extract: "css/[name].css", // 把css提取为单独文件
   }),
   img(),
   babel({
@@ -38,6 +39,14 @@ export default [
     format: 'es',
     preserveModules: true,
     preserveModulesRoot: 'src',
+    // 没生效？？？
+    // assetFileNames: ({ name }) => {
+    //   console.log(name);
+    //   const { ext, dir, base } = path.parse(name);
+    //   if (ext !== '.css') return '[name].[ext]';
+    //   // 规范 style 的输出格式
+    //   return path.join(dir, 'style', base);
+    // }
   },
   plugins,
   external: [
@@ -83,6 +92,9 @@ export default [
     'react-dom',
   ]
 },
+]
+
+
 // {
 //   input: "./main.d.ts",
 //   output: [{ file: "dist/my-library.d.ts", format: "es" }],
@@ -96,4 +108,3 @@ export default [
 //     'react-dom',
 //   ]
 // }
-]

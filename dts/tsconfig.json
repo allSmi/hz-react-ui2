@@ -26,7 +26,8 @@
     // "noEmit": true,
     "declaration": true,
     "declarationDir": "../types",
-    "outDir": "../ts-temp"
+    "emitDeclarationOnly": true // 只生成声明文件，而不会生成 js 文件，设置为true后就不用设置outDir
+    // "outDir": "../ts-temp" // js 文件输出目录
   },
   "include": [
     "../src",
